@@ -70,3 +70,8 @@ LOCAL_STATIC_LIBRARIES += \
 LOCAL_SHARED_LIBRARIES += \
     liblog \
     libnativehelper \
+
+ifneq ($(DEBUG_FORCE_STRICT_ALIASING),true)
+LOCAL_CFLAGS := -fno-strict-aliasing
+LOCAL_CPPFLAGS := -fno-strict-aliasing
+endif
